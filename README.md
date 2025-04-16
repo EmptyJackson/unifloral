@@ -1,5 +1,10 @@
 <h1 align="center">🌹 Unifloral: Unified Offline Reinforcement Learning</h1>
 
+<p align="center">
+    <a href= "https://arxiv.org/abs/2504.11453">
+        <img src="https://img.shields.io/badge/arXiv-2504.11453-b31b1b.svg" /></a>
+</p>
+
 Unified implementations and rigorous evaluation for offline reinforcement learning - built by [Matthew Jackson](https://github.com/EmptyJackson), [Uljad Berdica](https://github.com/uljad), and [Jarek Liesen](https://github.com/keraJLi).
 
 ## 💡 Code Philosophy
@@ -72,4 +77,17 @@ pulls = results["pulls"]                      # Number of pulls at each step
 means = results["estimated_bests_mean"]       # Mean score of estimated best policy
 ci_low = results["estimated_bests_ci_low"]    # Lower confidence bound
 ci_high = results["estimated_bests_ci_high"]  # Upper confidence bound
+```
+
+## 📝 Cite us!
+```bibtex
+@misc{jackson2025clean,
+      title={A Clean Slate for Offline Reinforcement Learning},
+      author={Matthew Thomas Jackson and Uljad Berdica and Jarek Liesen and Shimon Whiteson and Jakob Nicolaus Foerster},
+      year={2025},
+      eprint={2504.11453},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2504.11453},
+}
 ```
