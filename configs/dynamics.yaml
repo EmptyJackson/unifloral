@@ -1,0 +1,55 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: Dynamics-Model
+program: algorithms/dynamics.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: dynamics
+  eval_interval:
+    value: 10000
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 0.001
+  batch_size:
+    value: 256
+
+  # --- Dynamics ---
+  n_layers:
+    value: 4
+  layer_size:
+    value: 200
+  num_ensemble:
+    value: 7
+  num_elites:
+    value: 5
+  num_epochs:
+    value: 400
+  logvar_diff_coef:
+    value: 0.01
+  weight_decay:
+    value: 2.5e-5
+  validation_split:
+    value: 0.2
+  precompute_term_stats:
+    value: true

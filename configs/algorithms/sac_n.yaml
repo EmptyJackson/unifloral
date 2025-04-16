@@ -1,0 +1,51 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: SAC-N
+program: algorithms/sac_n.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: sac_n
+  num_updates:
+    value: 3000000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 0.0003
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+
+  # --- SAC-N ---
+  num_critics:
+    values: [5, 10, 20, 50, 100, 200]  # 500 and 1000 have high GPU memory usage

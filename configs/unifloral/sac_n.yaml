@@ -1,0 +1,133 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: SAC-N (Unifloral)
+program: algorithms/unifloral.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: unified
+  num_updates:
+    value: 3_000_000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 3e-4
+  actor_lr:
+    value: 3e-4
+  lr_schedule:
+    value: constant
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+  norm_obs:
+    value: false
+
+  # --- Actor architecture ---
+  actor_num_layers:
+    value: 3
+  actor_layer_width:
+    value: 256
+  actor_ln:
+    value: false
+  deterministic:
+    value: false
+  deterministic_eval:
+    value: false
+  use_tanh_mean:
+    value: false
+  use_log_std_param:
+    value: false
+  log_std_min:
+    value: -5.0
+  log_std_max:
+    value: 2.0
+
+  # --- Critic + value function architecture ---
+  num_critics:
+    values: [5, 10, 20, 50, 100, 200]
+  critic_num_layers:
+    value: 3
+  critic_layer_width:
+    value: 256
+  critic_ln:
+    value: false
+
+  # --- Actor loss components ---
+  actor_bc_coef:
+    value: 0.0
+  actor_q_coef:
+    value: 1.0
+  use_q_target_in_actor:
+    value: false
+  normalize_q_loss:
+    value: false
+  aggregate_q:
+    value: min
+
+  # --- AWR (Advantage Weighted Regression) actor ---
+  use_awr:
+    value: false
+  awr_temperature:
+    value: 1.0
+  awr_exp_adv_clip:
+    value: 100.0
+
+  # --- Critic loss components ---
+  num_critic_updates_per_step:
+    value: 1
+  critic_bc_coef:
+    value: 0.0
+  diversity_coef:
+    value: 0.0
+  policy_noise:
+    value: 0.0
+  noise_clip:
+    value: 0.0
+  use_target_actor:
+    value: false
+
+  # --- Value function ---
+  use_value_target:
+    value: false
+  value_expectile:
+    value: 0.8
+
+  # --- Entropy loss ---
+  use_entropy_loss:
+    value: true
+  ent_coef_init:
+    value: 1.0
+  actor_entropy_coef:
+    value: 1.0
+  critic_entropy_coef:
+    value: 1.0

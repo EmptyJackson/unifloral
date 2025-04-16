@@ -1,0 +1,55 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: EDAC
+program: algorithms/edac.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: edac
+  num_updates:
+    value: 3000000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 0.0003
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+
+  # --- SAC-N ---
+  num_critics:
+    values: [10, 20, 50]  # 100 has high GPU memory usage
+
+  # --- EDAC ---
+  eta:
+    values: [0.0, 1.0, 5.0, 10.0, 100.0, 200.0, 500.0, 1000.0]

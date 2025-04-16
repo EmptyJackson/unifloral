@@ -1,0 +1,57 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: TD3+BC
+program: algorithms/td3_bc.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: td3_bc
+  num_updates:
+    value: 1_000_000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 3e-4
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+
+  # --- TD3+BC ---
+  td3_alpha:
+    values: [1.0, 2.0, 2.5, 3.0, 4.0]
+  noise_clip:
+    value: 0.5
+  policy_noise:
+    value: 0.2
+  num_critic_updates_per_step:
+    value: 2

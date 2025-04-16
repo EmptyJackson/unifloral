@@ -1,0 +1,70 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: MOReL
+program: algorithms/morel.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    value: 0  # Fixed seed since we're sweeping over models
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: morel
+  num_updates:
+    value: 3000000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    value: 1e-4
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+
+  # --- Model-based specific ---
+  model_path:
+    values:  # This should be replaced with actual model paths for each environment
+      - "PLACEHOLDER_MODEL_PATH"
+  model_retain_epochs:
+    value: 5
+  num_critics:
+    value: 10
+  rollout_batch_size:
+    value: 50000
+  rollout_interval:
+    value: 1000
+  rollout_length:
+    value: 5
+  dataset_sample_ratio:
+    value: 0.01
+
+  # --- MOREL specific ---
+  threshold_coef:
+    values: [0, 5, 10, 15, 20, 25]
+  term_penalty_offset:
+    values: [-30, -50, -100, -200]

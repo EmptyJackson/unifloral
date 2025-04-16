@@ -1,0 +1,59 @@
+command:
+  - python3.9
+  - ${program}
+  - ${args_no_boolean_flags}
+entity: flair
+method: random
+name: CQL
+program: algorithms/cql.py
+project: unifloral
+
+parameters:
+  # --- Experiment ---
+  seed:
+    values: [0, 1, 2, 3, 4]
+  dataset:
+    values:
+      - halfcheetah-medium-v2
+  algorithm:
+    value: cql
+  num_updates:
+    value: 1_000_000
+  eval_interval:
+    value: 2500
+  eval_workers:
+    value: 8
+  eval_final_episodes:
+    value: 1000
+
+  # --- Logging ---
+  log:
+    value: true
+  wandb_project:
+    value: unifloral
+  wandb_team:
+    value: flair
+  wandb_group:
+    value: debug
+
+  # --- Generic optimization ---
+  lr:
+    values: [1e-4, 3e-4]
+  batch_size:
+    value: 256
+  gamma:
+    value: 0.99
+  polyak_step_size:
+    value: 0.005
+
+  # --- SAC-N ---
+  num_critics:
+    value: 10
+
+  # --- CQL ---
+  actor_lr:
+    values: [3e-5, 1e-4, 3e-4]
+  cql_temperature:
+    value: 1.0
+  cql_min_q_weight:
+    value: 10.0
