@@ -52,7 +52,7 @@ We implement a single script for dynamics model training: [`dynamics.py`](algori
 
 ## 📊 Evaluation
 
-Our evaluation script ([`evaluation.py`](evaluation.py)) implements the protocol described in our paper, analysing performance of a UCB bandit over a range of policy evaluations.
+Our evaluation script ([`evaluation.py`](evaluation.py)) implements the protocol described in our paper, analysing the performance of a UCB bandit over a range of policy evaluations.
 
 ```python
 from evaluation import load_results_dataframe, bootstrap_bandit_trials
