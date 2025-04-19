@@ -50,6 +50,8 @@ We implement a single script for dynamics model training: [`dynamics.py`](algori
 | COMBO | [`combo.py`](algorithms/combo.py) | - | [[ArXiv]](https://arxiv.org/abs/2102.08363) |
 | MoBRAC | - | [`unifloral/mobrac.yaml`](configs/unifloral/mobrac.yaml) | - |
 
+New ones coming soon 👀
+
 ## 📊 Evaluation
 
 Our evaluation script ([`evaluation.py`](evaluation.py)) implements the protocol described in our paper, analysing the performance of a UCB bandit over a range of policy evaluations.
