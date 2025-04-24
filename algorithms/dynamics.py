@@ -133,6 +133,7 @@ class EnsembleDynamics:
     ):
         self.dynamics_model = dynamics_model
         self.num_ensemble = len(elite_idxs)
+        self.dynamics_model.num_ensemble = self.num_ensemble
         self.termination_fn = termination_fn
         self.discrepancy = discrepancy
         self.min_r = min_r
