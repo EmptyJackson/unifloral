@@ -296,15 +296,17 @@ def make_train_step(args, actor_apply_fn, q_apply_fn, alpha_apply_fn, dataset):
 
             rand_q = q_apply_fn(params, batch.obs, cql_random_actions)
             pi_q = q_apply_fn(params, batch.obs, pi_actions)
-            # Note: Source implementation erroneously uses current obs in next_pi_q
-            next_pi_q = q_apply_fn(params, batch.next_obs, pi_next_actions)
+            next_pi_q = q_apply_fn(params, batch.obs, pi_next_actions)
             all_qs = jnp.concatenate([rand_q, pi_q, next_pi_q, q_pred], axis=1)
-            q_ood = jax.scipy.special.logsumexp(all_qs / args.cql_temperature, axis=1)
-            q_ood = jax.lax.stop_gradient(q_ood * args.cql_temperature)
-            q_diff = (jnp.expand_dims(q_ood, 1) - q_pred).mean()
-            min_q_loss = q_diff * args.cql_min_q_weight
 
-            critic_loss += min_q_loss.mean()
+            # Logsumexp over batch dimension, sum over ensemble dimension
+            q_ood = jax.scipy.special.logsumexp(all_qs / args.cql_temperature, axis=0)
+            q_ood = q_ood.sum(-1) * args.cql_temperature
+
+            q_diff = q_ood - q_pred.mean()
+            min_q_loss = q_diff * args.cql_min_q_weight
+            critic_loss += min_q_loss
+
             return critic_loss
 
         critic_loss, critic_grad = _q_loss_fn(agent_state.vec_q.params)
