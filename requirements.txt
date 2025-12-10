@@ -1,10 +1,10 @@
 d4rl @ git+https://github.com/rail-berkeley/d4rl.git
-jax[cuda]
+jax[cuda] < 0.6
 numpy < 2.0
 cython < 3.0
+mujoco == 2.1.0
 distrax
 flax
-mujoco
 optax
 tyro
 wandb
