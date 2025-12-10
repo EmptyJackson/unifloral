@@ -431,7 +431,7 @@ if __name__ == "__main__":
         final_iters = int(onp.ceil(args.eval_final_episodes / args.eval_workers))
         print(f"Evaluating final agent for {final_iters} iterations...")
         _rng = jax.random.split(rng, final_iters)
-        rets = onp.concat([eval_agent(args, _rng, env, agent_state) for _rng in _rng])
+        rets = onp.array([eval_agent(args, _rng, env, agent_state) for _rng in _rng])
         scores = d4rl.get_normalized_score(args.dataset, rets) * 100.0
         agg_fn = lambda x, k: {k: x, f"{k}_mean": x.mean(), f"{k}_std": x.std()}
         info = agg_fn(rets, "final_returns") | agg_fn(scores, "final_scores")
