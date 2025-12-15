@@ -1,8 +1,8 @@
-d4rl @ git+https://github.com/rail-berkeley/d4rl.git
+d4rl @ git+https://github.com/Farama-Foundation/D4RL.git@89141a689b0353b0dac3da5cba60da4b1b16254d
 jax[cuda] < 0.6
 numpy < 2.0
 cython < 3.0
-mujoco == 2.1.0
+mujoco-py >= 2.1.2.14
 distrax
 flax
 optax
