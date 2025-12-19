@@ -38,6 +38,12 @@ RUN uv venv .venv --python 3.10 && \
     . .venv/bin/activate && \
     uv pip install -r requirements.txt
 
+# Supress D4RL warnings
+ENV D4RL_SUPPRESS_IMPORT_ERROR=1
+ENV MUJOCO_GL=osmesa
+ENV PYOPENGL_PLATFORM=osmesa
+ENV DISPLAY=""
+
 # Activate the virtual environment by default
 ENV PATH="/app/.venv/bin:${PATH}"
 
@@ -58,4 +64,3 @@ RUN python -c "import gym, d4rl"
 
 # Default command
 CMD ["/bin/bash"]
-

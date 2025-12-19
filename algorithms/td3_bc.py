@@ -374,5 +374,6 @@ if __name__ == "__main__":
         if args.log:
             wandb.save(os.path.join("final_returns", filename))
 
+    env.close()
     if args.log:
         wandb.finish()

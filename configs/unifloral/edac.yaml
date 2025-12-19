@@ -16,7 +16,7 @@ parameters:
     values:
       - halfcheetah-medium-v2
   algorithm:
-    value: unified
+    value: unifloral_edac
   num_updates:
     value: 3_000_000
   eval_interval:
