@@ -516,5 +516,6 @@ if __name__ == "__main__":
     print("Saving dynamics model...")
     save_dynamics_model(args, dynamics_model)
 
+    env.close()
     if args.log:
         wandb.finish()
