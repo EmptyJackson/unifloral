@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmptyJackson&project=unifloral&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 <h1 align="center">🌹 Unifloral: Unified Offline Reinforcement Learning</h1>
 
 <p align="center">
